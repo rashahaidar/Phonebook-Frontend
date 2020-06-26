@@ -6,6 +6,7 @@ import personService from './services/persons'
 import Notification from './Components/Notification'
 
 const App=()=> {
+ debugger
   const[persons,setPersons]=useState([])
   const[filterName,setFilterName]=useState('')
   const[errorMessage,setErrorMessage]=useState('')
@@ -13,7 +14,10 @@ const App=()=> {
 //const[resultToShow,setResultToShow]=useState(persons)
  useEffect(()=>{
  personService.getAll()
- .then(inintialPersons=>setPersons(inintialPersons))
+ .then(inintialPersons=>{
+  // console.log(inintialPersons)
+  setPersons(inintialPersons)}
+ )
 //axios.get("http://localhost:3004/persons")
 //.then(r=>setPersons(r.data))
  },[])
